@@ -68,3 +68,14 @@ def maybe_download_sprite(session, sprite_url: str):
         if response.status_code == 200:
             content = response.content
     return content
+
+async def maybe_download_sprite_async(session, sprite_url: str):
+    """Return the content of a sprite if the get request is successfull.
+    Note that this function is noy asynchronous, so it may be inneficient to called it
+    withing an async function.
+    """
+    content = None
+    async with session.get(sprite_url) as response:
+        if response.status == 200:
+            content = await response.read()
+    return content

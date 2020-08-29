@@ -2,5 +2,7 @@
 .pytest*
 .mypy*
 
+pokemons_*
+
 __pycache__
 .DS_Store
