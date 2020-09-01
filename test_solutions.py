@@ -55,8 +55,8 @@ class TestSolution(unittest.TestCase):
         _test_correctness(self.output_dir)
         utils.maybe_remove_dir(self.output_dir)
 
-    def test_asyncio(self):
-        asyncio_main(self.output_dir, self.inputs)
+    async def test_asyncio(self):
+        await asyncio_main(self.output_dir, self.inputs)
         _test_correctness(self.output_dir)
         utils.maybe_remove_dir(self.output_dir)
 
